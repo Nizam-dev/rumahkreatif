@@ -16,6 +16,7 @@ class CreateJadwalKonsultasisTable extends Migration
         Schema::create('jadwal_konsultasis', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
+            $table->string('konsultasi');
             $table->time('waktu')->nullable();
             $table->string('status')->nullable()->default('pending');
             $table->foreignId('user_id')->constrained();

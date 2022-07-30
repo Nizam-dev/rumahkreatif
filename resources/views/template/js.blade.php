@@ -12,13 +12,18 @@
 <script src="{{asset('public/template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{{asset('public/template/js/demo/datatables-demo.js')}}"></script>
+<!-- <script src="{{asset('public/template/js/demo/datatables-demo.js')}}"></script> -->
+<!-- <script src="{{asset('public/template/js/demo/datatables-demo.js')}}"></script> -->
+<script src="{{asset('public/template/js/axios.min.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+
+
 
 <script>
-    @if(Session::has('sukes'))
+    @if(Session::has('sukses'))
     Swal.fire({
-        title: "{{Session::get('sukes')}}",
+        title: "{{Session::get('sukses')}}",
         type: 'success',
         icon: 'success',
         confirmButtonText: 'Ok'
@@ -31,6 +36,8 @@
         confirmButtonText: 'Ok'
     });
     @endif
+
+
 
 </script>
 

@@ -53,7 +53,14 @@ Route::post('katalogadmin',[App\Http\Controllers\Admin\KatalogController::class,
 Route::post('katalogadmin/{id}',[App\Http\Controllers\Admin\KatalogController::class,'update']);
 Route::get('katalogadmin/hapus/{id}',[App\Http\Controllers\Admin\KatalogController::class,'destroy']);
 
+Route::get('konsultasi',[App\Http\Controllers\Admin\KonsultasiController::class,'index']);
+
+
 // User
+Route::post('user/konsultasi/cekjadwal',[App\Http\Controllers\User\KonsultasiController::class,'cekjadwal']);
+
 Route::get('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'index']);
+Route::post('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'kirimjadwal']);
+
 Route::get('user/design',[App\Http\Controllers\User\DesignController::class,'index']);
 

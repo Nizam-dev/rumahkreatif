@@ -21,7 +21,7 @@ class KatalogController extends Controller
             'deskripsi' => 'required',
         ]);
         katalog::create($request->all());
-        return redirect()->back()->with('sukes', 'Katalog berhasil ditambahkan');
+        return redirect()->back()->with('sukses', 'Katalog berhasil ditambahkan');
     }
 
     public function update(Request $request, $id)
@@ -31,12 +31,12 @@ class KatalogController extends Controller
             'deskripsi' => 'required',
         ]);
         katalog::find($id)->update($request->all());
-        return redirect()->back()->with('sukes', 'Katalog berhasil diubah');
+        return redirect()->back()->with('sukses', 'Katalog berhasil diubah');
     }
 
     public function destroy($id)
     {
         katalog::find($id)->delete();
-        return redirect()->back()->with('sukes', 'Katalog berhasil dihapus');
+        return redirect()->back()->with('sukses', 'Katalog berhasil dihapus');
     }
 }

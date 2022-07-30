@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\katalog;
 
 class LandingPageController extends Controller
 {
@@ -23,6 +24,7 @@ class LandingPageController extends Controller
 
     public function katalog()
     {
-        return view('page.katalog');
+        $katalogs = katalog::all();
+        return view('page.katalog', compact('katalogs'));
     }
 }

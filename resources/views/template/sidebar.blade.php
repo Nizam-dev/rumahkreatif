@@ -12,36 +12,12 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{url('pendaftar')}}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Pendaftar Asosiasi</span></a>
-    </li>
-
-     <!-- Nav Item - Tables -->
-     <li class="nav-item">
-        <a class="nav-link" href="{{url('pendaftar')}}">
-            <i class="fas fa-fw fa-table"></i>
-            <span> Konsultasi</span></a>
-    </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{url('pendaftar')}}">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Design</span></a>
-    </li>
+    
+    @if(Auth::user()->role == 'admin') 
+        @include('template.role.admin')
+    @elseif(Auth::user()->role == 'asosiasi') 
+        @include('template.role.asosiasi')
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

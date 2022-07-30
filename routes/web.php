@@ -35,10 +35,25 @@ Route::get('katalog',[App\Http\Controllers\LandingPageController::class,'katalog
 
 
 
-// Admin
-Route::get('pendaftar',[App\Http\Controllers\Admin\PendaftarController::class,'index']);
-Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index']);
 
 Auth::routes(['login'=>false,'register'=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index']);
+
+
+// Admin
+Route::get('pendaftar',[App\Http\Controllers\Admin\PendaftarController::class,'index']);
+Route::get('pendaftarverif/{id}',[App\Http\Controllers\Admin\PendaftarController::class,'verifikasi']);
+Route::get('pendaftartolakverif/{id}',[App\Http\Controllers\Admin\PendaftarController::class,'tolakverifikasi']);
+
+
+Route::get('katalogadmin',[App\Http\Controllers\Admin\KatalogController::class,'index']);
+Route::post('katalogadmin',[App\Http\Controllers\Admin\KatalogController::class,'store']);
+Route::post('katalogadmin/{id}',[App\Http\Controllers\Admin\KatalogController::class,'update']);
+Route::get('katalogadmin/hapus/{id}',[App\Http\Controllers\Admin\KatalogController::class,'destroy']);
+
+// User
+Route::get('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'index']);
+Route::get('user/design',[App\Http\Controllers\User\DesignController::class,'index']);
+

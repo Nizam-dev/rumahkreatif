@@ -15,5 +15,6 @@ class pendaftar_asosiasi extends Model
             'alamat',
             'asosiasi',
             'nama_umkm',
+            'status'
     ];
 }

@@ -14,3 +14,24 @@
 <!-- Page level custom scripts -->
 <script src="{{asset('public/template/js/demo/datatables-demo.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    @if(Session::has('sukes'))
+    Swal.fire({
+        title: "{{Session::get('sukes')}}",
+        type: 'success',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    });
+    @elseif(Session::has('gagal'))
+    Swal.fire({
+        title: "{{Session::get('gagal')}}",
+        type: 'error',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+    });
+    @endif
+
+</script>
+
+@yield('js')

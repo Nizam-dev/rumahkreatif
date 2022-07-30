@@ -12,7 +12,7 @@
 
         <div class="row g-4">
 
-            @for($i=0;$i<9;$i++)
+            @foreach($katalogs as $katalog)
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item bg-white rounded h-100">
                     <div class="d-flex justify-content-between">
@@ -24,13 +24,12 @@
                         </a>
                     </div>
                     <div class="p-5">
-                        <h5 class="mb-3">Financial Analaysis</h5>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed
-                            stet lorem.</span>
+                        <h5 class="mb-3">{{$katalog->judul}}</h5>
+                        <span>{{$katalog->deskripsi}}</span>
                     </div>
                 </div>
             </div>
-            @endfor
+            @endforeach
 
         </div>
     </div>

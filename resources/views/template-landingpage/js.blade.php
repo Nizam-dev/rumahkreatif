@@ -8,3 +8,22 @@
 
 <!-- Template Javascript -->
 <script src="{{asset('public/landingpage/js/main.js')}}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    @if(session()->has('sukses'))
+    Swal.fire({
+        title: 'success',
+        text: '{{session()->get("sukses")}}',
+        icon: 'success',
+        confirmButtonText: 'Close'
+    })
+    @elseif(session()->has('gagal'))
+    Swal.fire({
+        title: 'gagal',
+        text: '{{session()->get("gagal")}}',
+        icon: 'error',
+        confirmButtonText: 'Close'
+    })
+    @endif
+</script>

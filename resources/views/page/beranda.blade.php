@@ -12,7 +12,7 @@ dalam mendapatkan arahan dan masukan terkait produknya agar jauh lebih menarik
 dan mempunyai daya saing di pasar nasional maupun internasional.</p>
 <p class="text-white pb-3 animated zoomIn">
 Silahkan daftar asosiasi jika UMKM anda belum terdaftar!
-                <a href="" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Daftar Sekarang</a>
+                <a href="{{url('pendaftaran')}}" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Daftar Sekarang</a>
             </div>
             <div class="col-lg-6 text-center text-lg-start">
                 <img class="img-fluid animated zoomIn" src="{{('public/landingpage/img/hero2.png')}}" alt="">
@@ -66,3 +66,4 @@ Silahkan daftar asosiasi jika UMKM anda belum terdaftar!
         
 
 @endsection
+

@@ -38,20 +38,26 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
 
-                                    <img class="mx-auto d-block" src="{{asset('public/image/logo.png')}}" alt="" srcset="">
+                                    <img class="mx-auto d-block" src="{{asset('public/image/logo.png')}}" alt=""
+                                        srcset="">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Masuk</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="{{url('login')}}" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                            name="username"
-                                            placeholder="username"
-                                            >
+                                            <input type="text" class="form-control form-control-user
+                                                @error('email') is-invalid @enderror
+                                                " 
+                                                value="{{old('email')}}"
+                                                name="email"
+                                                placeholder="username">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user
+                                                @error('email') is-invalid @enderror
+                                                " 
+                                                id="exampleInputPassword" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -60,10 +66,10 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
-
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -85,6 +91,25 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset('public/template/js/sb-admin-2.min.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        @if(session()->has('sukses'))
+        Swal.fire({
+            title: 'success',
+            text: '{{session()->get("sukses")}}',
+            icon: 'success',
+            confirmButtonText: 'Close'
+        })
+        @elseif(session()->has('gagal'))
+        Swal.fire({
+            title: 'gagal',
+            text: '{{session()->get("gagal")}}',
+            icon: 'error',
+            confirmButtonText: 'Close'
+        })
+        @endif
+    </script>
 
 </body>
 

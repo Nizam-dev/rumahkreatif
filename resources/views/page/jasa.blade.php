@@ -18,7 +18,7 @@
                 <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Lihat Selengkapnya</a>
             </div>
             <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                <img class="img-fluid" src="{{asset('public/landingpage/img/about.png')}}">
+                <img class="img-fluid" src="{{asset('public/image/jasa_logo.png')}}">
             </div>
 
         </div>
@@ -34,12 +34,12 @@
         <div class="row g-4 align-items-center">
            
             <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                <img class="img-fluid" src="{{asset('public/landingpage/img/about.png')}}">
+                <img class="img-fluid" src="{{asset('public/image/konsultasi.png')}}">
             </div>
 
             <div class="col-lg-6 text-primary wow fadeInUp" data-wow-delay="0.1s">
-                <h2 class="mb-4">Jasa Konsultasi</h2>
-                <p class="mb-4">Jasa Konsultasi Mengenai UMKM</p>
+                <h2 class="mb-4">Konsultasi</h2>
+                <p class="mb-4">Konsultasi Mengenai UMKM</p>
                 
                 <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Lihat Selengkapnya</a>
             </div>

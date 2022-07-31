@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\pendaftar_asosiasi;
-
+use Auth;
 class PendaftaranController extends Controller
 {
     public function index()
     {
+        if(Auth::check()){
+            return redirect('dashboard');
+        }
         return view('pendaftaran');
     }
 

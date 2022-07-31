@@ -55,6 +55,8 @@ Route::get('katalogadmin/hapus/{id}',[App\Http\Controllers\Admin\KatalogControll
 
 Route::get('konsultasi',[App\Http\Controllers\Admin\KonsultasiController::class,'index']);
 
+Route::get('design',[App\Http\Controllers\Admin\DesignController::class,'index']);
+
 
 // User
 Route::post('user/konsultasi/cekjadwal',[App\Http\Controllers\User\KonsultasiController::class,'cekjadwal']);

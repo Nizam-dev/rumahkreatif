@@ -57,9 +57,9 @@
 
     var table = $('#dataTable').DataTable();
     $(document).ready(()=>{
-        let tanggal_sekarang = moment().format("YYYY-MM-D");
-        $("[name='tanggal']").val(tanggal_sekarang);
-        filterTanggal(tanggal_sekarang)
+        // let tanggal_sekarang = moment().format("YYYY-MM-D");
+        // $("[name='tanggal']").val(tanggal_sekarang);
+        // filterTanggal(tanggal_sekarang)
     })
 
     $("[name='tanggal']").change(()=>{

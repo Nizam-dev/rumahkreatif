@@ -15,8 +15,9 @@ class CreateDesignsTable extends Migration
     {
         Schema::create('designs', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_design');
             $table->string('nama_design');
+            $table->string('jenis_design');
+            $table->text('deskripsi');
             $table->string('foto');
             $table->string('status')->nullable()->default('pending');
             $table->foreignId('user_id')->constrained();

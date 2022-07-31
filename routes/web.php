@@ -65,4 +65,5 @@ Route::get('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::cl
 Route::post('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'kirimjadwal']);
 
 Route::get('user/design',[App\Http\Controllers\User\DesignController::class,'index']);
+Route::post('user/design',[App\Http\Controllers\User\DesignController::class,'pesandesign']);
 

@@ -45,7 +45,7 @@ class PendaftarController extends Controller
 
 
         Mail::to($pendaftar->email)->send(new MailSend($details));
-        return redirect()->back()->with('sukes', 'Berhasil DiVerifikasi');
+        return redirect()->back()->with('sukses', 'Berhasil DiVerifikasi');
     }
 
     public function tolakverifikasi($id)
@@ -61,6 +61,6 @@ class PendaftarController extends Controller
         ]);
 
         Mail::to($pendaftar->email)->send(new MailSend($details));
-        return redirect()->back()->with('sukes', 'Verifikasi Akun Berhasil  Diupdate');
+        return redirect()->back()->with('sukses', 'Verifikasi Akun Berhasil  Diupdate');
     }
 }

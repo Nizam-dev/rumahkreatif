@@ -44,6 +44,8 @@ Route::resource('profile',App\Http\Controllers\ProfileController::class);
 
 
 // Admin
+Route::get('users',[App\Http\Controllers\Admin\UserController::class,'index']);
+
 Route::get('pendaftar',[App\Http\Controllers\Admin\PendaftarController::class,'index']);
 Route::get('pendaftarverif/{id}',[App\Http\Controllers\Admin\PendaftarController::class,'verifikasi']);
 Route::get('pendaftartolakverif/{id}',[App\Http\Controllers\Admin\PendaftarController::class,'tolakverifikasi']);

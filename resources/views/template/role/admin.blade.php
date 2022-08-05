@@ -22,6 +22,13 @@
 </li>
 
 <!-- Nav Item - Tables -->
+<li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{url('users')}}">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Users</span></a>
+</li>
+
+<!-- Nav Item - Tables -->
 <li class="nav-item {{ request()->is('konsultasi') ? 'active' : '' }}">
     <a class="nav-link" href="{{url('konsultasi')}}">
         <i class="fas fa-fw fa-table"></i>

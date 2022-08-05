@@ -75,9 +75,7 @@
                                                         name="nik"
                                                         placeholder="nik">
                                                 </div>
-                                            </div>
 
-                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Alamat</label>
                                                     <input type="text" class="form-control form-control-user
@@ -85,6 +83,25 @@
                                                         "
                                                         value="{{old('alamat')}}"
                                                         name="alamat" placeholder="alamat">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Alamat Produksi   </label>
+                                                    <input type="text" class="form-control form-control-user
+                                                        @error('alamat_produksi') is-invalid @enderror
+                                                        "
+                                                        value="{{old('alamat_produksi')}}"
+                                                        name="alamat_produksi" placeholder="alamat_produksi">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="">No Izin(PIRT)</label>
+                                                    <input type="text" class="form-control form-control-user
+                                                        @error('no_izin') is-invalid @enderror
+                                                        "
+                                                        name="no_izin" placeholder="no_izin">
                                                 </div>
 
                                                 <div class="form-group">
@@ -96,8 +113,8 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="">Asosiasi</label>
-                                                    <select name="asosiasi" class="form-control-user form-control" style="height:50px;padding:.5rem 1rem;">
+                                                    <label for="">Kategori</label>
+                                                    <select name="kategori" class="form-control-user form-control" style="height:50px;padding:.5rem 1rem;">
                                                         <option value="wong agung">Wong Agung</option>
                                                         <option value="akrab">Akrab</option>
                                                     </select>

@@ -16,4 +16,8 @@ class design extends Model
         'status',
         'user_id'
     ];
+
+    public function revisi(){
+    	return $this->hasMany(revisi_design::class);
+    }
 }

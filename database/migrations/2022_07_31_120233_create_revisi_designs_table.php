@@ -17,6 +17,7 @@ class CreateRevisiDesignsTable extends Migration
             $table->id();
             $table->text('deskripsi_revisi')->nullable();
             $table->string('foto_revisi')->nullable();
+            $table->string('foto_hasil');
             $table->foreignId('design_id')->constrained();
             $table->timestamps();
         });

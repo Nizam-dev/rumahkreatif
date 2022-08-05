@@ -13,7 +13,9 @@ class pendaftar_asosiasi extends Model
             'email',
             'nik',
             'alamat',
-            'asosiasi',
+            'alamat_produksi',
+            'kategori',
+            'no_izin',
             'nama_umkm',
             'status'
     ];

@@ -55,7 +55,7 @@ Route::get('katalogadmin/hapus/{id}',[App\Http\Controllers\Admin\KatalogControll
 
 Route::get('konsultasi',[App\Http\Controllers\Admin\KonsultasiController::class,'index']);
 
-Route::get('design',[App\Http\Controllers\Admin\DesignController::class,'index']);
+Route::resource('design',App\Http\Controllers\Admin\DesignController::class);
 
 
 // User
@@ -66,4 +66,8 @@ Route::post('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::c
 
 Route::get('user/design',[App\Http\Controllers\User\DesignController::class,'index']);
 Route::post('user/design',[App\Http\Controllers\User\DesignController::class,'pesandesign']);
+Route::post('user/revisidesign/{id}',[App\Http\Controllers\User\DesignController::class,'revisidesign']);
+Route::get('user/revisidesign/{id}',[App\Http\Controllers\User\DesignController::class,'design_selesai']);
+Route::get('user/downloaddesign/{id}',[App\Http\Controllers\User\DesignController::class,'download_design']);
+
 

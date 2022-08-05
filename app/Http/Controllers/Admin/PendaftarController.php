@@ -33,8 +33,10 @@ class PendaftarController extends Controller
             'email' => $pendaftar->email,
             'nik'=>$pendaftar->nik,
             'alamat'=>$pendaftar->alamat,
+            'alamat_produksi'=>$pendaftar->alamat_produksi,
             "nama_umkm"=>$pendaftar->nama_umkm,
-            "asosiasi"=>$pendaftar->asosiasi,
+            "kategori"=>$pendaftar->kategori,
+            "no_izin"=>$pendaftar->no_izin,
             'password' => bcrypt($password),
             'role' => 'asosiasi',
         ]);

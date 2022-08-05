@@ -18,7 +18,7 @@
 <li class="nav-item {{ request()->is('pendaftar') ? 'active' : '' }}">
     <a class="nav-link" href="{{url('pendaftar')}}">
         <i class="fas fa-fw fa-table"></i>
-        <span>Pendaftar Asosiasi</span></a>
+        <span>Pendaftar</span></a>
 </li>
 
 <!-- Nav Item - Tables -->
@@ -29,7 +29,7 @@
 </li>
 
 <!-- Nav Item - Tables -->
-<li class="nav-item {{ request()->is('design') ? 'active' : '' }}">
+<li class="nav-item {{ request()->is('design*') ? 'active' : '' }}">
     <a class="nav-link" href="{{url('design')}}">
         <i class="fas fa-fw fa-table"></i>
         <span>Design</span></a>

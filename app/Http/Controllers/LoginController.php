@@ -28,7 +28,17 @@ class LoginController extends Controller
         }
 
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
-            return redirect('dashboard');
+            switch (auth()->user()->role) {
+                case 'admin':
+                    return redirect('dashboard');
+                    break;
+                case 'asosiasi':
+                    return redirect('user/konsultasi');
+                    break;
+                default:
+                    return redirect('dashboard');
+                    break;
+            }
         }
 
         return redirect()->back()->with("gagal","Password tidak valid");

@@ -10,7 +10,7 @@
         <div class="navbar-nav ms-auto py-0">
             <a href="{{url('/')}}" class="nav-item nav-link {{request()->is('/') ? 'active' : '' }}">Beranda</a>
             <a href="{{url('asosiasi')}}" class="nav-item nav-link {{request()->is('asosiasi') ? 'active' : '' }}">Asosiasi</a>
-            <a href="{{url('jasa')}}" class="nav-item nav-link {{request()->is('jasa') ? 'active' : '' }}">Jasa</a>
+            <a href="{{url('jasa')}}" class="nav-item nav-link {{request()->is('jasa') ? 'active' : '' }}">Fasilitas</a>
             <a href="{{url('katalog')}}" class="nav-item nav-link {{request()->is('katalog') ? 'active' : '' }}">Katalog</a>
             
         </div>

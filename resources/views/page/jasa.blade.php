@@ -6,13 +6,13 @@
 
         <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s"
             style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-            <h2 class="mb-5 text-white">Jasa</h2>
+            <h2 class="mb-5 text-white">Fasilitas</h2>
             <div class="d-inline-block border rounded-pill text-white px-4 mb-3"></div>
         </div>
 
         <div class="row g-4 align-items-center">
             <div class="col-lg-6 text-white wow fadeInUp" data-wow-delay="0.1s">
-                <h2 class="mb-4">Jasa Desain</h2>
+                <h2 class="mb-4">Fasilitas Desain</h2>
                 <p class="mb-4">Logo Kemasan, Foto Produk, Desain Kemasan </p>
                 
                 <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Lihat Selengkapnya</a>

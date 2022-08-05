@@ -16,14 +16,10 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-item bg-white rounded h-100">
                     <div class="d-flex justify-content-between">
-                        <div class="service-icon">
-                            <i class="fa fa-chart-area fa-2x"></i>
-                        </div>
-                        <a class="service-btn" href="">
-                            <i class="fa fa-link fa-2x"></i>
-                        </a>
+                        <img src="{{asset('public/katalog/'.$katalog->foto)}}" alt="" srcset="" class="w-100" style="height:210px;">
                     </div>
                     <div class="p-5">
+                        <span style="font-size:10px;">{{date('d-m-Y', strtotime($katalog->tanggal));}}</span>
                         <h5 class="mb-3">{{$katalog->judul}}</h5>
                         <span>{{$katalog->deskripsi}}</span>
                     </div>

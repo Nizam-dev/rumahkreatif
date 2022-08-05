@@ -8,6 +8,7 @@ use App\Models\pendaftar_asosiasi;
 use App\Mail\MailSend;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class PendaftarController extends Controller
 {
@@ -20,7 +21,7 @@ class PendaftarController extends Controller
     public function verifikasi($id)
     {
         $pendaftar = pendaftar_asosiasi::find($id);
-        $password = "123456";
+        $password = Str::random(6);
         $details = [
             'nama' => $pendaftar->name,
             'email' => $pendaftar->email,

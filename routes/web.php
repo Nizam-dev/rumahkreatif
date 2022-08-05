@@ -40,6 +40,7 @@ Auth::routes(['login'=>false,'register'=>false]);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index']);
+Route::resource('profile',App\Http\Controllers\ProfileController::class);
 
 
 // Admin

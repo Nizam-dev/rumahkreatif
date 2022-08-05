@@ -15,6 +15,7 @@ class CreateKatalogsTable extends Migration
     {
         Schema::create('katalogs', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal');
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('foto')->nullable();

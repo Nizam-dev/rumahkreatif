@@ -171,7 +171,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Foto Contoh Revisi(Opsional)</label>
-                                    <input type="file" name="foto_revisi" id="" class="form-cotrol">
+                                    <input type="file" name="foto_revisi" id="" class="form-cotrol" accept="image/*">
                                 </div>
 
                                 <div class="form-group">

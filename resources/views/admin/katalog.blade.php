@@ -13,9 +13,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{url('katalogadmin')}}" method="post">
+            <form action="{{url('katalogadmin')}}" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     @csrf
+                    <div class="form-group">
+                        <label for="">Tanggal</label>
+                        <input type="date" class="form-control" name="tanggal" required>
+                    </div>
                     <div class="form-group">
                         <label for="">Judul</label>
                         <input type="text" class="form-control" name="judul" required>
@@ -23,6 +27,10 @@
                     <div class="form-group">
                         <label for="">Deskripsi</label>
                         <textarea name="deskripsi" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Foto</label>
+                        <input type="file" class="form-control" name="foto" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -72,6 +80,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Tanggal</th>
                         <th>Judul</th>
                         <th>Deskripsi</th>
                         <th>Option</th>
@@ -83,6 +92,7 @@
                     @foreach($katalogs as $katalog)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$katalog->tanggal}}</td>
                         <td>{{$katalog->judul}}</td>
                         <td>{{$katalog->deskripsi}}</td>
                         <td>
@@ -110,6 +120,8 @@
 
 <script>
     function tambahKatalog() {
+        $("[name='foto']").parent().removeClass("d-none");
+        $("[name='foto']").prop("required",true);
         $("[name='judul']").val('');
         $("[name='deskripsi']").val('');
         $("modal_tambah_formLabel").html("Tambah Katalog"); 
@@ -118,6 +130,9 @@
     }
 
     function editKatalog(katalog) {
+        $("[name='foto']").parent().addClass("d-none");
+        $("[name='foto']").prop("required",false);
+        $("[name='tanggal']").val(katalog.tanggal);
         $("[name='judul']").val(katalog.judul);
         $("[name='deskripsi']").val(katalog.deskripsi);
         $("modal_tambah_formLabel").html("Edit Katalog"); 

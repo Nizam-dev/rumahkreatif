@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('jenis_usaha')->nullable();
             $table->string('kategori')->nullable();
             $table->string('gender')->nullable();
-            $table->string('foto')->nullable()->default("profil.png");
+            $table->string('foto')->nullable()->default("profile.png");
             $table->string('role');
             $table->rememberToken();
             $table->timestamps();

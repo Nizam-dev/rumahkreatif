@@ -20,7 +20,18 @@ class KatalogController extends Controller
             'judul' => 'required',
             'deskripsi' => 'required',
         ]);
-        katalog::create($request->all());
+
+        $file = $request->file('foto');
+
+        $tujuan_upload = public_path('/katalog');
+        $nama_file = date('d-m-Y-H-i').$file->getClientOriginalName();
+ 
+        $file->move($tujuan_upload,$nama_file);
+        $katalog = $request->all();
+        $katalog["foto"] = $nama_file;
+
+
+        katalog::create($katalog);
         return redirect()->back()->with('sukses', 'Katalog berhasil ditambahkan');
     }
 

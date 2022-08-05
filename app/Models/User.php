@@ -29,6 +29,7 @@ class User extends Authenticatable
         'jenis_usaha',
         'no_hp',
         'role',
+        'foto',
         'password',
     ];
 

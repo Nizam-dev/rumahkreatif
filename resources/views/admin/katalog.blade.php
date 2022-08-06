@@ -96,12 +96,12 @@
                         <td>{{$katalog->judul}}</td>
                         <td>{{$katalog->deskripsi}}</td>
                         <td>
-                            <button onclick="editKatalog({{$katalog}})" class="btn btn-sm btn-warning">
+
+                            <button onclick="editKatalog({{$katalog}})" class="btn btn-sm btn-warning mb-2">
                                 <i class="fa fa-edit"></i> Edit
                             </button>
-
                             <button onclick="hapusKatalog({{$katalog}})" class="btn btn-sm btn-danger">
-                                <i class="fa fa-trash"></i> Hapus
+                                <i class="fa fa-trash"></i> Hapus 
                             </button>
                            
                         </td>

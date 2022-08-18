@@ -11,34 +11,21 @@
         </div>
 
         <div class="row g-4">
-            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item">
-                    <h5>AKRAB</h5>
-                    <p class="mb-4">Asosiasi</p>
-                    <img class="img-fluid rounded-circle w-50 mb-4" src="{{asset('public/image/logo.png')}}" alt="">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
+           
+            @foreach($asosiasis as $asosiasi)
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-white rounded h-100">
+                    <div class="d-flex justify-content-between">
+                        <img src="{{asset('public/asosiasi/'.$asosiasi->foto_asosiasi)}}" alt="" srcset="" class="w-100" style="height:210px;">
+                    </div>
+                    <div class="p-5">
+                        <h5 class="mb-3">{{$asosiasi->nama_asosiasi}}</h5>
+                        <span>{{$asosiasi->deskripsi}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item">
-                    <h5>Wong Agung</h5>
-                    <p class="mb-4">Asosiasi</p>
-                    <img class="img-fluid rounded-circle w-50 mb-4" src="{{asset('public/image/logo.png')}}" alt="">
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
 
         </div>
     </div>

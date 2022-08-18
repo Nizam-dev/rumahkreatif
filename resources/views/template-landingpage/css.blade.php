@@ -16,8 +16,11 @@
 <!-- Customized Bootstrap Stylesheet -->
 <link href="{{asset('public/landingpage/css/bootstrap.min.css')}}" rel="stylesheet">
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 <!-- Template Stylesheet -->
 <link href="{{asset('public/landingpage/css/style.css')}}" rel="stylesheet">    
+
 
 <style> 
 .bg-primary{

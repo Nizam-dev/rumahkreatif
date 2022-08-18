@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Rumah Kreatif - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('public/template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -77,6 +77,16 @@
                                                 </div>
 
                                                 <div class="form-group">
+                                                    <label for="">No WhatsApp</label>
+                                                    <input type="text" class="form-control form-control-user
+                                                        @error('no_wa') is-invalid @enderror
+                                                        "
+                                                        value="{{old('no_wa')}}"
+                                                        name="no_wa"
+                                                        placeholder="no_wa">
+                                                </div>
+
+                                                <div class="form-group">
                                                     <label for="">Alamat</label>
                                                     <input type="text" class="form-control form-control-user
                                                         @error('alamat') is-invalid @enderror
@@ -97,11 +107,11 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="">No Izin(PIRT)</label>
+                                                    <label for="">NIB(Nomor Induk Berusaha)</label>
                                                     <input type="text" class="form-control form-control-user
-                                                        @error('no_izin') is-invalid @enderror
+                                                        @error('nib') is-invalid @enderror
                                                         "
-                                                        name="no_izin" placeholder="no_izin">
+                                                        name="nib" placeholder="nib">
                                                 </div>
 
                                                 <div class="form-group">
@@ -112,12 +122,24 @@
                                                         name="nama_umkm" placeholder="nama_umkm">
                                                 </div>
 
+                                                
+
                                                 <div class="form-group">
-                                                    <label for="">Kategori</label>
+                                                    <label for="">Kategori Usaha</label>
                                                     <select name="kategori" class="form-control-user form-control" style="height:50px;padding:.5rem 1rem;">
-                                                        <option value="wong agung">Wong Agung</option>
-                                                        <option value="akrab">Akrab</option>
+                                                        <option value="Makanan">Makanan</option>
+                                                        <option value="Minuman">Minuman</option>
+                                                        <option value="Fashion">Fashion</option>
+                                                        <option value="Kerajinan Tangan">Kerajinan Tangan</option>
+                                                        <option value="Lainnya">Lainnya</option>
                                                     </select>
+                                                </div>
+
+                                                <div class="form-group kl d-none">
+                                                    <label for="">Masukan Kategori Usaha</label>
+                                                    <input type="text" class="form-control form-control-user 
+                                                        "
+                                                        name="kategori_lainnya" placeholder="kategori usaha lainnya">
                                                 </div>
 
                                             </div>
@@ -153,6 +175,36 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('public/template/js/sb-admin-2.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+@if(session()->has('sukses'))
+    Swal.fire({
+        title: 'success',
+        text: '{{session()->get("sukses")}}',
+        icon: 'success',
+        confirmButtonText: 'Close'
+    })
+    @elseif(session()->has('gagal'))
+    Swal.fire({
+        title: 'gagal',
+        text: '{{session()->get("gagal")}}',
+        icon: 'error',
+        confirmButtonText: 'Close'
+    })
+    @endif
+    
+        $('[name="kategori"]').on('change',()=>{
+            console.log($('[name="kategori"]').val())
+            if($('[name="kategori"]').val() == "Lainnya"){
+                $('.kl').removeClass('d-none')
+                $('.kl').find('input').prop('required',true)
+            }else{
+                $('.kl').addClass('d-none')
+                $('.kl').find('input').prop('required',false)
+            }
+        })
+    </script>
 
 </body>
 

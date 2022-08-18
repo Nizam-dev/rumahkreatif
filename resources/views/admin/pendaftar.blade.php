@@ -18,7 +18,7 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Nik</th>
-                        <th>No Izin(PIRT)</th>
+                        <th>NIB</th>
                         <th>Nama UMKM</th>
                         <th>Kategori</th>
                         <th>Verifikasi</th>
@@ -33,11 +33,11 @@
                         <td>{{$pendaftar->name}}</td>
                         <td>{{$pendaftar->email}}</td>
                         <td>{{$pendaftar->nik}}</td>
-                        <td>{{$pendaftar->no_izin}}</td>
+                        <td>{{$pendaftar->nib == null ? '-':$pendaftar->nib}}</td>
                         <td>{{$pendaftar->nama_umkm}}</td>
                         <td>{{$pendaftar->kategori}}</td>
                         <td>
-                            <a href="{{url('pendaftarverif/'.$pendaftar->id)}}" class="btn btn-sm btn-success">
+                            <a href="{{url('pendaftarverif/'.$pendaftar->id)}}" class="btn btn-sm btn-success mb-2">
                                 <i class="fa fa-check"></i> Verifikasi
                             </a>
 

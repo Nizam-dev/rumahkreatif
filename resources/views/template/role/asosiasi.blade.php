@@ -17,3 +17,9 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Design</span></a>
 </li>
+
+<li class="nav-item  {{ request()->is('user/idcard') ? 'active' : '' }}">
+    <a class="nav-link" href="{{url('user/idcard')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>ID CARD</span></a>
+</li>

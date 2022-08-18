@@ -15,8 +15,9 @@ class pendaftar_asosiasi extends Model
             'alamat',
             'alamat_produksi',
             'kategori',
-            'no_izin',
+            'nib',
             'nama_umkm',
+            'no_wa',
             'status'
     ];
 }

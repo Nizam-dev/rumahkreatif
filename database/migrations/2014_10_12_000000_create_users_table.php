@@ -20,13 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('no_izin')->nullable();
+            $table->string('id_card')->nullable();
+            $table->string('nib')->nullable();
             $table->string('nik')->nullable();
             $table->string('nama_umkm')->nullable();
             $table->string('alamat')->nullable();
             $table->string('alamat_produksi')->nullable();
-            $table->string('no_hp')->nullable();
-            $table->string('jenis_usaha')->nullable();
+            $table->string('no_wa')->nullable();
             $table->string('kategori')->nullable();
             $table->string('gender')->nullable();
             $table->string('foto')->nullable()->default("profile.png");

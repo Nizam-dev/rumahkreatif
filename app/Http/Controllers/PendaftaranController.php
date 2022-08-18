@@ -23,20 +23,25 @@ class PendaftaranController extends Controller
             'nik'	=>"required",
             'alamat'	=>"required",
             'alamat_produksi'	=>"required",
-            'no_izin'	=>"required",
             'nama_umkm'	=>"required",
+            'no_wa'	=>"required",
         ]);
 
         $cek = pendaftar_asosiasi::where('email',$request->email)
         ->orWhere('nik',$request->nik)
-        ->orWhere('no_izin',$request->no_izin)
         ->first();
 
         if($cek != null){
             return redirect()->back()->with('gagal','Anda Sudah Mendaftar Sebelumnya');
         }
 
-        pendaftar_asosiasi::create($request->all());
+        $pendaftar = $request->all();
+        if($request->kategori == "Lainnya"){
+            $pendaftar['kategori'] = $request->kategori_lainnya;
+        }
+
+
+        pendaftar_asosiasi::create($pendaftar);
 
         return redirect('/')->with('sukses',"Pendaftaran sedang diproses, Konfirmasi akan dikirim melalui email");
     }

@@ -16,9 +16,10 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Id Card</th>
                         <th>Email</th>
-                        <th>Nik</th>
-                        <th>No Izin(PIRT)</th>
+                        <th>NIK</th>
+                        <th>NIB</th>
                         <th>Nama UMKM</th>
                         <th>Kategori</th>
                     </tr>
@@ -30,9 +31,10 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$user->name}}</td>
+                        <td>{{$user->id_card}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->nik}}</td>
-                        <td>{{$user->no_izin}}</td>
+                        <td>{{$user->nib == null ? '-':$user->nib}}</td>
                         <td>{{$user->nama_umkm}}</td>
                         <td>{{$user->kategori}}</td>
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Rumah Kreatif - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('public/template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
                                                 " 
                                                 value="{{old('email')}}"
                                                 name="email"
-                                                placeholder="username">
+                                                placeholder="Email">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user

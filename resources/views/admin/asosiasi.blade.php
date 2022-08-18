@@ -13,28 +13,20 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{url('katalogadmin')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('asosiasiadmin')}}" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
-                        <label for="">Tanggal Mulai</label>
-                        <input type="date" class="form-control" name="tanggal_awal" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Tanggal Berakhir</label>
-                        <input type="date" class="form-control" name="tanggal_akhir" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Judul</label>
-                        <input type="text" class="form-control" name="judul" required>
+                        <label for="">Nama Asosiasi</label>
+                        <input type="text" class="form-control" name="nama_asosiasi" required>
                     </div>
                     <div class="form-group">
                         <label for="">Deskripsi</label>
                         <textarea name="deskripsi" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="">Foto</label>
-                        <input type="file" class="form-control" name="foto" required>
+                        <label for="">Logo Asosiasi</label>
+                        <input type="file" class="form-control" name="foto_asosiasi" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -68,13 +60,13 @@
 </div>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Katalog</h1>
+<h1 class="h3 mb-2 text-gray-800">Asosiasi</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Katalog
+        <h6 class="m-0 font-weight-bold text-primary">Asosiasi
 
-            <button class="btn btn-sm btn-primary float-right" onclick="tambahKatalog()"> <i class="fa fa-plus"></i>
+            <button class="btn btn-sm btn-primary float-right" onclick="tambahAsosiasi()"> <i class="fa fa-plus"></i>
                 Tambah</button>
         </h6>
     </div>
@@ -84,29 +76,29 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Tanggal Mulai</th>
-                        <th>Tanggal Berakhir</th>
-                        <th>Judul</th>
+                        <th>Nama Asosiasi</th>
                         <th>Deskripsi</th>
+                        <th>Logo</th>
                         <th>Option</th>
                     </tr>
                 </thead>
 
                 <tbody>
 
-                    @foreach($katalogs as $katalog)
+                    @foreach($asosiasis as $asosiasi)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$katalog->tanggal_awal}}</td>
-                        <td>{{$katalog->tanggal_akhir}}</td>
-                        <td>{{$katalog->judul}}</td>
-                        <td>{{$katalog->deskripsi}}</td>
+                        <td>{{$asosiasi->nama_asosiasi}}</td>
+                        <td>{{$asosiasi->deskripsi}}</td>
+                        <td>
+                            <img src="{{asset('public/asosiasi/'.$asosiasi->foto_asosiasi)}}" alt="" srcset="" style="width:40px;">
+                        </td>
                         <td>
 
-                            <button onclick="editKatalog({{$katalog}})" class="btn btn-sm btn-warning">
+                            <button onclick="editAsosiasi({{$asosiasi}})" class="btn btn-sm btn-warning">
                                 <i class="fa fa-edit"></i> Edit
                             </button>
-                            <button onclick="hapusKatalog({{$katalog}})" class="btn btn-sm btn-danger">
+                            <button onclick="hapusAsosiasi({{$asosiasi}})" class="btn btn-sm btn-danger">
                                 <i class="fa fa-trash"></i> Hapus 
                             </button>
                            
@@ -126,31 +118,30 @@
 
 <script>
     $("#dataTable").DataTable()
-    
-    function tambahKatalog() {
-        $("[name='foto']").parent().removeClass("d-none");
-        $("[name='foto']").prop("required",true);
-        $("[name='judul']").val('');
+
+
+    function tambahAsosiasi() {
+        $("[name='foto_asosiasi']").parent().removeClass("d-none");
+        $("[name='foto_asosiasi']").prop("required",true);
+        $("[name='nama_asosiasi']").val('');
         $("[name='deskripsi']").val('');
-        $("modal_tambah_formLabel").html("Tambah Katalog"); 
-        $("#modal_tambah_form form").attr("action", "{{url('katalogadmin')}}");
+        $("modal_tambah_formLabel").html("Tambah Asosiasi"); 
+        $("#modal_tambah_form form").attr("action", "{{url('asosiasiadmin')}}");
         $('#modal_tambah_form').modal('show');
     }
 
-    function editKatalog(katalog) {
-        $("[name='foto']").parent().addClass("d-none");
-        $("[name='foto']").prop("required",false);
-        $("[name='tanggal_awal']").val(katalog.tanggal_awal);
-        $("[name='tanggal_akhir']").val(katalog.tanggal_akhir);
-        $("[name='judul']").val(katalog.judul);
-        $("[name='deskripsi']").val(katalog.deskripsi);
-        $("modal_tambah_formLabel").html("Edit Katalog"); 
-        $("#modal_tambah_form form").attr("action", "{{url('katalogadmin')}}/"+katalog.id);
+    function editAsosiasi(asosiasi) {
+        $("[name='foto_asosiasi']").parent().addClass("d-none");
+        $("[name='foto_asosiasi']").prop("required",false);
+        $("[name='nama_asosiasi']").val(asosiasi.nama_asosiasi);
+        $("[name='deskripsi']").val(asosiasi.deskripsi);
+        $("modal_tambah_formLabel").html("Edit Asosiasi"); 
+        $("#modal_tambah_form form").attr("action", "{{url('asosiasiadmin')}}/"+asosiasi.id);
         $('#modal_tambah_form').modal('show');
     }
 
-    function hapusKatalog(katalog) {
-        $("#btn-hapus").attr("href", "{{url('katalogadmin/hapus')}}/"+katalog.id);
+    function hapusAsosiasi(asosiasi) {
+        $("#btn-hapus").attr("href", "{{url('asosiasiadmin/hapus')}}/"+asosiasi.id);
         $('#modal_hapus_form').modal('show');
     }
 </script>

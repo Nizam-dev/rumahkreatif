@@ -18,9 +18,10 @@ class CreatePendaftarAsosiasisTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('nik');
+            $table->string('no_wa');
             $table->string('alamat');
             $table->string('alamat_produksi');
-            $table->string('no_izin');
+            $table->string('nib')->nullable();
             $table->string('nama_umkm');
             $table->string('kategori');
             $table->string('status')->nullable()->default('pending');

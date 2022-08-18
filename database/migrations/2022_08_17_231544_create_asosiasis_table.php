@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKatalogsTable extends Migration
+class CreateAsosiasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateKatalogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('katalogs', function (Blueprint $table) {
+        Schema::create('asosiasis', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_awal');
-            $table->date('tanggal_akhir');
-            $table->string('judul');
+            $table->string('nama_asosiasi');
+            $table->string('foto_asosiasi');
             $table->text('deskripsi');
-            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateKatalogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('katalogs');
+        Schema::dropIfExists('asosiasis');
     }
 }

@@ -6,6 +6,9 @@
 <script src="{{asset('public/landingpage/lib/waypoints/waypoints.min.js')}}"></script>
 <script src="{{asset('public/landingpage/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
 <!-- Template Javascript -->
 <script src="{{asset('public/landingpage/js/main.js')}}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -27,3 +30,5 @@
     })
     @endif
 </script>
+
+@yield('js')

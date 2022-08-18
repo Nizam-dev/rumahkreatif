@@ -33,11 +33,12 @@ class PendaftarController extends Controller
             'name' => $pendaftar->name,
             'email' => $pendaftar->email,
             'nik'=>$pendaftar->nik,
+            'id_card'=>$this->generateIdCard(),
             'alamat'=>$pendaftar->alamat,
             'alamat_produksi'=>$pendaftar->alamat_produksi,
             "nama_umkm"=>$pendaftar->nama_umkm,
             "kategori"=>$pendaftar->kategori,
-            "no_izin"=>$pendaftar->no_izin,
+            "nib"=>$pendaftar->nib,
             'password' => bcrypt($password),
             'role' => 'asosiasi',
         ]);
@@ -65,5 +66,14 @@ class PendaftarController extends Controller
 
         Mail::to($pendaftar->email)->send(new MailSend($details));
         return redirect()->back()->with('sukses', 'Verifikasi Akun Berhasil  Diupdate');
+    }
+
+    public function generateIdCard()
+    {
+        do {
+            $code = "RM". random_int(111111, 999999);
+        } while (User::where("id_card", "=", $code)->first());
+  
+        return $code;
     }
 }

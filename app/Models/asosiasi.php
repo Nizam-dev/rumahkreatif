@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class katalog extends Model
+class asosiasi extends Model
 {
     use HasFactory;
-    protected $fillable = ['judul','deskripsi','foto','tanggal_awal','tanggal_akhir'];
+    protected $fillable=[
+        'nama_asosiasi',
+        'foto_asosiasi',
+        'deskripsi'
+    ];
 }

@@ -56,6 +56,12 @@ Route::post('katalogadmin',[App\Http\Controllers\Admin\KatalogController::class,
 Route::post('katalogadmin/{id}',[App\Http\Controllers\Admin\KatalogController::class,'update']);
 Route::get('katalogadmin/hapus/{id}',[App\Http\Controllers\Admin\KatalogController::class,'destroy']);
 
+Route::get('asosiasiadmin',[App\Http\Controllers\Admin\AsosiasiController::class,'index']);
+Route::post('asosiasiadmin',[App\Http\Controllers\Admin\AsosiasiController::class,'store']);
+Route::post('asosiasiadmin/{id}',[App\Http\Controllers\Admin\AsosiasiController::class,'update']);
+Route::get('asosiasiadmin/hapus/{id}',[App\Http\Controllers\Admin\AsosiasiController::class,'destroy']);
+
+
 Route::get('konsultasi',[App\Http\Controllers\Admin\KonsultasiController::class,'index']);
 
 Route::resource('design',App\Http\Controllers\Admin\DesignController::class);
@@ -64,6 +70,7 @@ Route::resource('design',App\Http\Controllers\Admin\DesignController::class);
 // User
 Route::post('user/konsultasi/cekjadwal',[App\Http\Controllers\User\KonsultasiController::class,'cekjadwal']);
 
+Route::get('user/idcard',[App\Http\Controllers\User\IdCardController::class,'index']);
 Route::get('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'index']);
 Route::post('user/konsultasi',[App\Http\Controllers\User\KonsultasiController::class,'kirimjadwal']);
 

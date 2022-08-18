@@ -10,4 +10,12 @@
 <!-- Custom styles for this page -->
 <link href="{{asset('public/template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+<style>
+.sidebar-dark {
+    background-color: #4e73df;
+    background-image : linear-gradient(180deg,#4e73df 10%,#4e73df 100%);
+}
+
+</style>
+
 @yield('css')
